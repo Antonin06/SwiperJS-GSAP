@@ -1,0 +1,16 @@
+body {
+	background-color: $black !important;
+	color: $white !important;
+}
+p {
+	margin-bottom: 0 !important;
+}
+.main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
