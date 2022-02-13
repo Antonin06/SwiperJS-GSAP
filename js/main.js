@@ -49,4 +49,45 @@ document.addEventListener("DOMContentLoaded", function() {
 	swiper2.on('slideChangeTransitionEnd', function () {
 		gsap.to('.swiper2 .swiper-slide-active img',{padding: 0, opacity: 1, duration: .5} );
 	})
+
+
+	// gsap.set(".project-preview", { width: 0 });
+
+	let nav_items = document.querySelectorAll('.navigation-item');
+
+	nav_items.forEach(function(nav_item, i){
+		let index = i+1;
+		nav_item.addEventListener("mouseover", function(evt) {
+			gsap.to('.project-preview', {width:600, ease: Expo.easeInOut, duration: .5});
+		})
+		nav_item.addEventListener("mouseout", function(evt) {
+			gsap.to('.project-preview', {width:0, ease: Expo.easeInOut, duration: .2});
+		})
+		// console.log(nav_item)
+
+		let hover = nav_item.querySelector('.navigation-link-'+ index);
+		// console.log(hover)
+
+		hover.addEventListener('mouseover', function(evt) {
+			let test = document.querySelector('.project-preview').style.backgroundImage = "url('../images/img"+index+".jpg')";
+			console.log(test)
+			// console.log(preview, index)
+			// preview
+			// console.log(preview.style.backgroundImage, index)
+		})
+
+
+	})
+
+	// for (var i = 0; i < nav_items.length; i++) {
+	// 	let index = i+1;
+	// 	console.log(index)
+	// 	nav_item.addEventListener("mouseover", function(evt) {
+	// 		gsap.to('.project-preview', {width:600, ease: Expo.easeInOut, duration: .5});
+	// 	})
+	// 	nav_item.addEventListener("mouseout", function(evt) {
+	// 		gsap.to('.project-preview', {width:0, ease: Expo.easeInOut, duration: .2});
+	// 	})
+	// }
+
 });

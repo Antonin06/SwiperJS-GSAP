@@ -1,6 +1,9 @@
 .swiper1 {
 	height: 500px;
 	position: relative;
+	@media screen and (max-width: $lg) {
+		height: fit-content;
+	}
 	.swiper-wrapper {
 		.swiper-slide {
 			.aa-row {
@@ -13,6 +16,12 @@
 						width: 100%;
 						height: 100%;
 						object-fit: cover;
+						@media screen and (max-width: $lg) {
+							height: 320px;
+						}
+					}
+					@media screen and (max-width: $lg) {
+						width: 100%;
 					}
 				}
 				.col-right {
@@ -33,9 +42,30 @@
 						font-size: 120px;
 						color: transparent;
 						-webkit-text-stroke: 2px black;
+						@media screen and (max-width: $lg) {
+							font-size: 80px;
+							bottom: -10%;
+						}
+					}
+					.slide-content {
+						@media screen and (max-width: $lg) {
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							-webkit-line-clamp: 3;
+							overflow: hidden;
+						}
+					}
+					@media screen and (max-width: $lg) {
+						width: 100%;
+						padding: 40px;
+						height: 100%;
 					}
 				}
+				@media screen and (max-width: $lg) {
+					flex-direction: column;
+				}
 			}
+
 		}
 	}
 	.swiper-button-next,
@@ -54,6 +84,10 @@
 		&:after {
 			color: $black;
 		}
+		@media screen and (max-width: $lg) {
+			top: calc(320px - 60px);
+			left: 0;
+		}
 	}
 	.swiper-button-next {
 		right: calc(50% - 60px);
@@ -63,6 +97,10 @@
 		background: $black;
 		&:after {
 			color: $white;
+		}
+		@media screen and (max-width: $lg) {
+			top: calc(320px);
+			right: 0;
 		}
 	}
 }
